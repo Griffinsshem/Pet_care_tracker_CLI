@@ -11,6 +11,13 @@ Why it exists: it solves the everyday problem of remembering and recording pet c
  - Project Structure
  - Requirements
  - Installation & Setup
+ - Initialize Database(Create Tables & Seed data)
+ - Usage: CLI Commands & Examples
+ - Database Schema (Tables & relationships)
+ - How it Works - High Level
+ - Development Notes & Tips
+ - Demo Script
+ - License & Credits
 
  ### Project Overview
 
@@ -59,7 +66,7 @@ pet_care_tracker/
    ```sqlalchemy```
    ```typer```
 
-You can install them with pip or pipenv
+You can install them with ```pip``` or ```pipenv```
 
 ### Installation & Setup
 
@@ -120,5 +127,27 @@ python -m lib.cli --help
 - Create:
 
 ```
-python -m lib.cli create-pet "name" "species" --breed "bree" --age age 2
+python -m lib.cli create-pet "name" "species" --breed "bree" --age <num>
 ```
+
+- List:
+
+```
+python -m lib.cli show-pets
+```
+
+- Edit:
+
+```
+python -m lib.cli update-pet <id> --name "name" --breed "breed" --age <num>
+```
+
+- Delete(using pet_id):
+
+```
+python -m lib.cli remove-pet <num>
+```
+
+#### Care Types
+
+- Create:
