@@ -151,3 +151,10 @@ python -m lib.cli remove-pet <num>
 #### Care Types
 
 - Create:
+
+```
+python -m lib.cli create-care-type "care type(ie "Vet Visit")"
+```
+This will add a new care type called "Vet Visit"
+
+- List:
