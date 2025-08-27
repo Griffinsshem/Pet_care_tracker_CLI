@@ -40,7 +40,7 @@ def add_care_type(name: str):
     print(f"Care type '{name}' added!")
     session.close()
 
-def list_care_type():
+def list_care_types():
     """Show all available care types."""
     session = Session()
     types = session.query(CareType).all()
