@@ -158,3 +158,13 @@ python -m lib.cli create-care-type "care type(ie "Vet Visit")"
 This will add a new care type called "Vet Visit"
 
 - List:
+
+```
+python -m lib.cli show-care-types
+```
+
+- Edit:
+
+```
+python -m lib.cli update-care-type CARE_TYPE_ID --name "New Name"
+```
