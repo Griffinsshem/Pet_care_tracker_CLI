@@ -1,7 +1,9 @@
 #create database tables
 
 from lib.database import Base, engine
-from lib.models import pet, care_type, care_event
+from lib.models.pet import Pet
+from lib.models.care_type import CareType
+from lib.models.care_events import CareEvent
 
 
 if __name__ == "__main__":
