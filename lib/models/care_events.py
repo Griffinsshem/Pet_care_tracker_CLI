@@ -1,3 +1,5 @@
+#CareEvent table(links a pet to a care type with a description)
+
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from . import Base

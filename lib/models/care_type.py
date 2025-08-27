@@ -1,3 +1,5 @@
+#careType table
+
 from sqlalchemy import Column, Integer, String
 from . import Base
 
@@ -11,4 +13,4 @@ class CareType(Base):
 
 
     def __repr__(self):
-        return f"<CareType(id={self.id}, name='{self.name}')>"
+        return f"<CareType(id={self.id}, name={self.name})>"

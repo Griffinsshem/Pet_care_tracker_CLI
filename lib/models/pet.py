@@ -1,3 +1,5 @@
+#pets Table
+
 from sqlalchemy import Column, Integer, String
 from . import Base
 
@@ -14,4 +16,4 @@ class Pet(Base):
 
 
     def __repr__(self):
-        return f"<Pet(id={self.id}, name='{self.name}', species='{self.species}')>"
+        return f"<Pet(id={self.id}, name={self.name}, species={self.species})>"
