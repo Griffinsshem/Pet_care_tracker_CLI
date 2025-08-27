@@ -1,4 +1,4 @@
-import sqlite3
+from sqlalchemy.orm import declarative_base
+from lib.database import engine
 
-CONN = sqlite3.connect('company.db')
-CURSOR = CONN.cursor()
+Base = declarative_base()
