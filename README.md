@@ -108,3 +108,17 @@ Database seeded with sample pets, care types, and events!
 A SQLite file (e.g. pet.db) will be created in the project folder after creating tables.
 
 ### Usage - CLI Commands & Examples
+
+Run the Typer CLI help to see commands:
+
+```
+python -m lib.cli --help
+```
+
+#### Pets
+
+- Create:
+
+```
+python -m lib.cli create-pet "name" "species" --breed "bree" --age age 2
+```
