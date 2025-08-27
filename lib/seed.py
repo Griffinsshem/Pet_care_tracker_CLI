@@ -1,13 +1,12 @@
-from helpers import add_pet, add_care_type, add_care_event
+#insert starter data
 
-#add pets
-add_pet("Buddy", "Dog", "Beagle", 3)
-add_pet("Whiskers", "Cat", "Siamese", 2)
+from lib.database import Session
+from lib.models.pet import Pet
+from lib.models.care_type import CareType
+from lib.models.care_events import CareEvent
 
-#add care types
-add_care_type("Feeding")
-add_care_type("Walk")
-add_care_type("Vet Visit")
+def run_seed():
+    
+    session = Session()
 
-#add event
-add_care_event(1, 1, "Fed Buddy kibble at 8am")
+    bud

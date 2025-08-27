@@ -1,4 +1,5 @@
 # lib/helpers.py
+#helper functions used in CLI
 
 from models import session
 from models.pet import Pet

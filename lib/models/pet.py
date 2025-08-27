@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
 from . import Base
 
 
@@ -13,8 +12,6 @@ class Pet(Base):
     age = Column(Integer)
 
 
-    #relationship: a pet can have many events
-    care_events =relationship("CareEvent", back_populates="pet")
 
     def __repr__(self):
-        return f"<Pet(name={self.name}, species={self.species})>"
+        return f"<Pet(id={self.id}, name='{self.name}', species='{self.species}')>"

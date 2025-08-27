@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
 from . import Base
 
 
@@ -10,7 +9,6 @@ class CareType(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
-    care_event = relationship("CareEvent", back_populates="care_type")
 
     def __repr__(self):
-        return f"<CareType(name={self.name})>"
+        return f"<CareType(id={self.id}, name='{self.name}')>"
