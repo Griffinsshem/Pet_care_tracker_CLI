@@ -168,3 +168,80 @@ python -m lib.cli show-care-types
 ```
 python -m lib.cli update-care-type CARE_TYPE_ID --name "New Name"
 ```
+
+- Delete:
+
+```
+python -m lib.cli remove-care-type CARE_TYPE_ID
+```
+
+#### Care Events
+
+- Create(use pet_id and care_type_id from ```show-pets```/```show-care-types```):
+
+```
+python -m lib.cli create-event PET_ID CARE_TYPE_ID "Description of the event"
+```
+
+- List:
+
+```
+python -m lib.cli show-events
+```
+
+- Edit:
+
+```
+python -m lib.cli update-event EVENT_ID [--pet-id NEW_PET_ID] [--care-type-id NEW_CARE_TYPE_ID] [--description "New description"]
+```
+
+- Delete:
+
+```
+python -m lib.cli remove-event EVENT_ID
+```
+
+- Show an individual pet history:
+
+```
+python -m lib.cli show-history PET_ID
+```
+
+### Database Schema(Tables & Relationships)
+
+#### Tables
+
+- ```pets``` - columns: ```id (pk)```, ```name```,    ```species```, ```breed```, ```age```
+- care_types — columns: id (PK), name
+
+- care_events — columns: ```id (PK)```, ```description```, ```pet_id (FK ->  pets.id)```, ```care_type_id (FK -> care_types.id)```
+
+#### Relationships
+
+ - One ```Pet``` → many ```CareEvent```s
+
+ - One ```CareType``` → many ```CareEvent```s
+
+ - Each ```CareEvent``` belongs to one ```Pet``` and one ```CareType```.
+
+ ### How It Works — High Level
+
+- ```lib/database.py``` creates an SQLAlchemy ```engine```, ```Base```, and a ```Session``` factory.
+
+- Model classes in ```lib/models/``` inherit from ```Base```. When you run ```Base.metadata.create_all(engine)``` those model definitions become actual database tables.
+
+- ```lib/helpers.py``` contains small functions that open a ```Session```, perform queries or modifications (add, edit, delete), and close the session.
+
+- ```lib/cli.py``` maps Typer commands to the helper functions. CLI calls translate into DB operations behind the scenes.
+
+- The SQLite file lives locally — no server required.
+
+### Development Notes & Tips
+
+- If you change models, re-run ```python lib/debug.py``` to create/alter tables (or use a migration tool like Alembic for complex migrations).
+
+- When testing multiple seed runs, you may want to clear records or drop-and-create tables inside ```seed.py```.
+
+- Use ```sqlite3 pet.db``` or a GUI DB viewer (like DB Browser for SQLite or a VSCode extension) to inspect tables directly.
+
+- Keep ```helpers.py``` focused on DB logic and ```cli.py``` on user interaction — separation of concerns makes the code easier to maintain.
