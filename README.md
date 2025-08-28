@@ -57,6 +57,16 @@ pet_care_tracker/
         └── care_event.py  # CareEvent model
 ```
 
+### Tech Stack
+
+- **Language**: Python 3.10+
+- **Database**: SQLite (via SQLAlchemy ORM)
+- **Libraries**:
+  - SQLAlchemy (ORM for database interaction)
+  - Tabulate (for clean CLI tables)
+- **Tools**: Git & CLI (Command Line Interface)
+
+
 ### Requirements
 
 - Python 3.8+
@@ -127,7 +137,8 @@ python -m lib.cli --help
 - Create:
 
 ```
-python -m lib.cli create-pet "name" "species" --breed "bree" --age <num>
+python -m lib.cli create-pet NAME SPECIES [--breed BREED] [--age AGE]
+
 ```
 
 - List:
@@ -139,13 +150,13 @@ python -m lib.cli show-pets
 - Edit:
 
 ```
-python -m lib.cli update-pet <id> --name "name" --breed "breed" --age <num>
+python -m lib.cli update-pet PET_ID [--name NAME] [--species SPECIES] [--breed BREED] [--age AGE]
 ```
 
 - Delete(using pet_id):
 
 ```
-python -m lib.cli remove-pet <num>
+python -m lib.cli remove-pet PET_ID
 ```
 
 #### Care Types
@@ -153,9 +164,8 @@ python -m lib.cli remove-pet <num>
 - Create:
 
 ```
-python -m lib.cli create-care-type "care type(ie "Vet Visit")"
+python -m lib.cli create-care-type "Care Type Name"
 ```
-This will add a new care type called "Vet Visit"
 
 - List:
 
@@ -245,3 +255,18 @@ python -m lib.cli show-history PET_ID
 - Use ```sqlite3 pet.db``` or a GUI DB viewer (like DB Browser for SQLite or a VSCode extension) to inspect tables directly.
 
 - Keep ```helpers.py``` focused on DB logic and ```cli.py``` on user interaction — separation of concerns makes the code easier to maintain.
+
+### License & Credits
+
+This project is licensed under the MIT License.  
+Feel free to use, modify, and distribute it under the license terms.
+
+Credits: Built as a teaching exercise for learning Python, OOP, SQLAlchemy, and CLI design.
+
+### 🙋‍♂️ Questions or Suggestions?
+
+I'm always happy to hear feedback, ideas, or questions!
+
+📧 Email: griffinsshem254@gmail.com
+
+💻 GitHub: [griffinsshem](https://github.com/griffinsshem)
