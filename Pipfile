@@ -4,6 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+sqlalchemy = "*"
+typer = "*"
 ipdb = "*"
 faker = "*"
 pytest = "7.1.3"

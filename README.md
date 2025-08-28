@@ -49,6 +49,7 @@ pet_care_tracker/
     ├── debug.py           # create tables / debug helper
     ├── seed.py            # insert sample data
     ├── cli.py             # Typer CLI commands
+    |── reset.py           # reset the models
     ├── helpers.py         # CRUD helpers (add/list/edit/delete)
     └── models/
         ├── __init__.py    # exposes Base for other models
@@ -110,7 +111,13 @@ Creating tables...
 Tables created successfully!
 ```
 
-2. (Optional) Seed the database with sample data for demo:
+2. Reset the tables:
+
+```
+python -m lib.reset
+```
+
+3. (Optional) Seed the database with sample data for demo:
 
 ```
 python -m lib.seed.py
