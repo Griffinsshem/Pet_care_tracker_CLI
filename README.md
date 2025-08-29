@@ -16,7 +16,6 @@ Why it exists: it solves the everyday problem of remembering and recording pet c
  - Database Schema (Tables & relationships)
  - How it Works - High Level
  - Development Notes & Tips
- - Demo Script
  - License & Credits
 
  ### Project Overview
