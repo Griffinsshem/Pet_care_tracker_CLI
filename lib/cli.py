@@ -15,9 +15,16 @@ from lib.helpers import (
     edit_care_event,
     delete_care_event,
     list_pet_history,
+    welcome_message,
+    exit_message,
 )
 
 app = typer.Typer(help="Pet Care Tracker CLI")
+
+@app.command()
+def welcome():
+    """Show welcome message."""
+    welcome_message()
 
 #Pets
 
@@ -90,6 +97,11 @@ def remove_event(event_id: int):
 def show_history(pet_id: int):
     """Show care history for a single pet by pet_id."""
     list_pet_history(pet_id)
+
+@app.command()
+def exit():
+    """Exit the application."""
+    exit_message()
 
 
 if __name__ == "__main__":

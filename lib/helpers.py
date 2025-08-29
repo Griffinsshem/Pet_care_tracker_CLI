@@ -193,3 +193,10 @@ def list_pet_history(pet_id: int):
     session.close()
 
 
+def welcome_message():
+    """Display a welcome message for the CLI app."""
+    print("🐾 Welcome to the Pet Care Tracker CLI! 🐾")
+
+def exit_message():
+    """Display a goodbye message when exiting the CLI app."""
+    print("Goodbye! 👋Thanks for using the Pet Care Tracker.")
