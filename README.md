@@ -96,6 +96,17 @@ source .venv/bin/activate
 pip install sqlalchemy typer
 ```
 
+Generate migrations:
+```
+pipenv run alembic revision --autogenerate -m "Initial migration"
+```
+
+Apply migrations:
+
+```
+pipenv run alembic upgrade head
+```
+
 ### Initialize Database
 
 1. Create the tables (run once, or whenever models change):
@@ -136,6 +147,12 @@ Run the Typer CLI help to see commands:
 
 ```
 python -m lib.cli --help
+```
+
+or 
+
+```
+python -m lib.cli run
 ```
 
 #### Pets
