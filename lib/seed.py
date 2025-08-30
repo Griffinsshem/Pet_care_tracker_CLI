@@ -19,9 +19,8 @@ def run_seed():
     vet = CareType(name="Vet Visit")
 
     session.add_all([buddy, whiskers, feeding, walk, vet])
-    session.commit()  # now buddy.id and other IDs are available
+    session.commit()
 
-    # Create sample events (use persisted IDs)
     e1 = CareEvent(pet_id=buddy.id, care_type_id=feeding.id, description="Breakfast kibble at 8:00")
     e2 = CareEvent(pet_id=buddy.id, care_type_id=walk.id, description="Evening walk 20 mins")
     e3 = CareEvent(pet_id=whiskers.id, care_type_id=vet.id, description="Annual check-up")
